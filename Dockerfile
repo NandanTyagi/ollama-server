@@ -18,5 +18,6 @@ EXPOSE 11434
 # Set OLLAMA_HOST to listen on all network interfaces
 ENV OLLAMA_HOST=http://0.0.0.0:11434
 
+
 # Start the Ollama server when the container launches
 CMD ["ollama", "serve"]

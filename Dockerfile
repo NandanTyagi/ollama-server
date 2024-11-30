@@ -14,5 +14,4 @@ RUN apt-get update && \
 EXPOSE 11434
 
 # Start the Ollama server when the container launches, listening on all interfaces
-CMD ["ollama", "serve", "--host", "0.0.0.0"]
-
+CMD ["ollama", "serve", "--address", "0.0.0.0"]

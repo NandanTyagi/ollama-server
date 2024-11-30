@@ -1,8 +1,9 @@
 # Use the official Ubuntu 22.04 base image
 FROM ubuntu:22.04
 
-# Set environment variables to prevent interactive prompts during package installation
-ENV DEBIAN_FRONTEND=noninteractive
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive \
+    OLLAMA_ADDRESS=0.0.0.0:11434
 
 # Update package lists, install dependencies, and install Ollama
 RUN apt-get update && \
@@ -13,5 +14,6 @@ RUN apt-get update && \
 # Expose port 11434 for the Ollama server
 EXPOSE 11434
 
-# Start the Ollama server when the container launches, listening on all interfaces
-CMD ["ollama", "serve", "--address", "0.0.0.0"]
+# Start the Ollama server when the container launches
+CMD ["ollama", "serve"]
+

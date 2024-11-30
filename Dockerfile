@@ -15,5 +15,5 @@ RUN apt-get update && \
 EXPOSE 11434
 
 # Start the Ollama server when the container launches
-CMD ["ollama", "serve"]
+CMD ["ollama", "serve", "--address", "0.0.0.0:11434"]
 

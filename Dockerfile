@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive \
-    OLLAMA_ADDRESS=0.0.0.0:11434
+    OLLAMA_HOST=http://0.0.0.0:11434
 
 # Update package lists, install dependencies, and install Ollama
 RUN apt-get update && \
@@ -15,5 +15,5 @@ RUN apt-get update && \
 EXPOSE 11434
 
 # Start the Ollama server when the container launches
-CMD ["ollama", "serve", "--address", "0.0.0.0:11434"]
+CMD ["ollama", "serve"]
 
